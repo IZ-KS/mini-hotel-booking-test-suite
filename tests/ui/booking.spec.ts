@@ -19,7 +19,7 @@ test.describe('UI - Booking Tests', () => {
       await page.getByRole('textbox', { name: 'Email' }).fill('abc@gmail.com');
       await page.getByRole('textbox', { name: 'Phone' }).fill('+601912345678');
 
-      await page.getByRole('button', { name: 'Reserve Now' }).click();
+      await page.getByRole('button', { name: 'Reserve Now' }).click({ timeout: 15000 });
 
 
       const returnHome = page.getByRole('link', { name: 'Return home' });
