@@ -1,5 +1,6 @@
 import {test as base, expect, request, Page} from '@playwright/test';
 import { BASE_URL } from './constants';
+import { AdminLoginPage } from '../pages/AdminLoginPage';
 
 type Fixtures = {
     adminPage: Page; //UI login
@@ -9,23 +10,11 @@ type Fixtures = {
 export const test = base.extend<Fixtures>({
     adminPage: async ({ page }, use) => {
 
-        //Navigate to base URL
-        await page.goto(BASE_URL);
+    const loginPage = new AdminLoginPage(page);
+    await loginPage.goto(BASE_URL);
+    await loginPage.login('admin', 'password');
+    await use(page);
 
-        //Login Flow
-        // Go to Admin Panel link at top right
-        await page.getByRole('link', { name: 'Admin', exact: true }).click();
-
-        //Enter valid login
-        await page.getByLabel('Username').fill('admin');
-        await page.getByLabel('Password').fill('password');
-        await page.getByRole('button', { name: 'Login' }).click();
-
-        // Verify login worked
-        await expect(page.getByRole('link', { name: 'Rooms' })).toBeVisible();
-
-        // Expose this logged-in page as "adminPage"
-        await use(page);
     },
 
       // ✅ API login fixture

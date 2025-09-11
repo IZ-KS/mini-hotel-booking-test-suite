@@ -15,7 +15,6 @@ test.describe('UI - Login Tests', () => {
     await page.getByRole('link', { name: 'Admin', exact: true }).click();
 
     // Enter invalid login
-    //await page.getByLabel('Username').fill('wronguser');
     await page.locator('id=username').fill('wronguser');
     await page.getByLabel('Password').fill('wrongpass');
     await page.locator('xpath=//button[text()="Login"]').click();
