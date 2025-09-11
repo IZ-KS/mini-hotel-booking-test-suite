@@ -42,4 +42,3 @@ test.describe('UI - Booking Tests', () => {
     });
 
 });
-
