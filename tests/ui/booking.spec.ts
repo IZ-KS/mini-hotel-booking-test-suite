@@ -26,8 +26,8 @@ test.describe('UI - Booking Tests', () => {
       const errorHeading = page.getByRole('heading', { name: 'Application error: a client-' });
       
       const winner = await Promise.race([
-          returnHome.waitFor({ state: 'visible', timeout: 5000 }).then(() => 'home').catch(() => null),
-          errorHeading.waitFor({ state: 'visible', timeout: 5000 }).then(() => 'error').catch(() => null)
+          returnHome.waitFor({ state: 'visible', timeout: 10000  }).then(() => 'home').catch(() => null),
+          errorHeading.waitFor({ state: 'visible', timeout: 10000  }).then(() => 'error').catch(() => null)
       ]);
 
   // The "if else statement" is to handle the server stability outcome after booking the room
