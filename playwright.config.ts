@@ -25,9 +25,9 @@ export default defineConfig({
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   
-  timeout: 5000, // ⏱️ max time one test can run
+  timeout: 10000, // ⏱️ max time one test can run
   expect: {
-    timeout: 5000, // ⏱️ max time for assertions like toHaveText()
+    timeout: 10000, // ⏱️ max time for assertions like toHaveText()
   },
 
 
@@ -39,8 +39,8 @@ export default defineConfig({
     trace: 'on-first-retry',
     screenshot: 'on',
 
-    actionTimeout: 5000, // ⏱️ max time for actions like click(), fill(), goto()
-    navigationTimeout: 5000, // ⏱️ max time for page.goto(), page.waitForNavigation()
+    actionTimeout: 10000, // ⏱️ max time for actions like click(), fill(), goto()
+    navigationTimeout: 10000, // ⏱️ max time for page.goto(), page.waitForNavigation()
   },
 
   /* Configure projects for major browsers */

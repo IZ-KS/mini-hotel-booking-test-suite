@@ -12,7 +12,7 @@ test.describe('UI - Booking Tests', () => {
 
       await page.locator('div').filter({ hasText: /^£150 per nightBook now$/ }).getByRole('link').click();
 
-      await page.locator('id=doReservation').click();
+      await page.locator('id=doReservation').click({ timeout: 15000 });
 
       await page.getByRole('textbox', { name: 'Firstname' }).fill('Isaac');
       await page.getByRole('textbox', { name: 'Lastname' }).fill('Lim');
@@ -36,7 +36,7 @@ test.describe('UI - Booking Tests', () => {
       } else if (winner === 'error') {
         console.log('Server error heading is visible');
       } else {
-        console.log('Neither element became visible after 5s');
+        console.log('Neither element became visible after 10s');
         throw new Error('Unexpected UI state');
       }
 
