@@ -25,7 +25,7 @@ test.describe('UI - Room Creating using Manual Flow)', () => {
 
   });
 
-    // Use the "adminPage" fixture to get a logged-in page
+    // Use the normal method to login 
     test('Admin adding room', async ({ page }) => {
 
     // //Go to Rooms page
