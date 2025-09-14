@@ -48,7 +48,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install k6
-        uses: grafana/setup-k6@v1
+        uses: grafana/setup-k6-action@v1
       - name: Run k6 test
         run: k6 run performance/load-test.js
       - uses: actions/upload-artifact@v4
